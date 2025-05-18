@@ -1,0 +1,102 @@
+<?php
+$fullName = $_POST['fullName'] ?? '';
+$email = $_POST['email'] ?? '';
+$password = $_POST['password'] ?? '';
+$confirmPassword = $_POST['confirmPassword'] ?? '';
+$location = $_POST['location'] ?? '';
+$zip = $_POST['zip'] ?? '';
+$birthdate = $_POST['birthdate'] ?? '';
+$country = $_POST['country'] ?? '';
+$gender = $_POST['gender'] ?? '';
+$thoughts = $_POST['thoughts'] ?? '';
+$termsAccepted = isset($_POST['terms']) ? 'Yes' : 'No';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Result</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color:rgb(255, 255, 255);
+    }
+
+    .result-box {
+      background-color: rgb(170, 158, 175);
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      text-align: left;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .result-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .result-box p {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #111;
+    }
+
+    .result-box strong {
+      font-size: 16px;
+      color: #222;
+    }
+
+    .confirm-button {
+      display: block;
+      margin: 30px auto 0;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .confirm-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="result-box">
+    <h2>Registration Received Data</h2>
+    <p><strong>Full Name:</strong> <?= htmlspecialchars($fullName) ?></p>
+    <p><strong>Email:</strong> <?= htmlspecialchars($email) ?></p>
+    <p><strong>Location:</strong> <?= htmlspecialchars($location) ?></p>
+    <p><strong>Zip Code:</strong> <?= htmlspecialchars($zip) ?></p>
+    <p><strong>Birthdate:</strong> <?= htmlspecialchars($birthdate) ?></p>
+    <p><strong>Country:</strong> <?= htmlspecialchars($country) ?></p>
+    <p><strong>Gender:</strong> <?= htmlspecialchars($gender) ?></p>
+    <p><strong>Your Thoughts:</strong> <?= nl2br(htmlspecialchars($thoughts)) ?></p>
+    <p><strong>Terms Accepted:</strong> <?= $termsAccepted ?></p>
+
+    <button class="confirm-button" onclick="confirmAction()">Confirm</button>
+  </div>
+
+  <script>
+    function confirmAction() {
+      alert("Thank you! Your registration has been confirmed.");
+      // window.location.href = "some-other-page.php"; // Optional redirect
+    }
+  </script>
+
+</body>
+</html>
