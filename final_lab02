@@ -239,7 +239,7 @@
   <!-- Registration Form -->
     <div class="box form-box">
       <div class="form-container">
-        <form id="registrationForm" method="POST" action="submit.php">
+        <form id="registrationForm" method="POST" action="process.php">
 
           <input type="text" id="fullName" name="fullName" placeholder="Full Name" required />
           <input type="email" id="email" name="email" placeholder="Email" required />
